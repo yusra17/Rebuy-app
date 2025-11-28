@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:newget/modelView/Explore_view.dart';
-import 'package:newget/modelView/login_view.dart';
+import 'package:newget/modelView/home.dart';
+import 'package:newget/modelView/navbar.dart';
+import 'package:newget/modelView/signup.dart';
 
-class Signup extends StatelessWidget {
-  const Signup({super.key});
+class LoginView extends StatelessWidget {
+  const LoginView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,18 +21,23 @@ class Signup extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black, width: 2),
-                        borderRadius: BorderRadius.circular(
-                          8,
-                        ), // rounded corners
-                      ),
-                      child: Icon(
-                        Icons.arrow_back_ios,
-                        size: 18,
-                        color: Colors.black,
+                    GestureDetector(
+                      onTap: () {
+                        Get.back();
+                      },
+                      child: Container(
+                        padding: EdgeInsets.fromLTRB(8, 8, 8, 8),
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(
+                            8,
+                          ), // rounded corners
+                        ),
+                        child: Icon(
+                          Icons.arrow_back_ios,
+                          size: 18,
+                          color: Colors.black,
+                        ),
                       ),
                     ),
                     Image.asset("asset/images/1.png"),
@@ -44,7 +50,7 @@ class Signup extends StatelessWidget {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(24.0),
-                    child: Image.asset("asset/images/2.png"),
+                    child: Image.asset("asset/images/2(1).png"),
                   ),
                 ],
               ),
@@ -58,7 +64,7 @@ class Signup extends StatelessWidget {
                     bottom: 12.0,
                   ),
                   child: Text(
-                    "SignUp with one of the following options",
+                    "LogIn with one of the following options",
 
                     style: TextStyle(fontSize: 12, color: Colors.grey),
                   ),
@@ -115,28 +121,12 @@ class Signup extends StatelessWidget {
               SizedBox(height: MediaQuery.of(context).size.height * 5 / 100),
               Image.asset("asset/images/6.png"),
               SizedBox(height: MediaQuery.of(context).size.height * 3 / 100),
+
               Padding(
                 padding: const EdgeInsets.only(
                   left: 36.0,
                   right: 36.0,
-                  top: 10,
-                ),
-                child: TextField(
-                  decoration: InputDecoration(
-                    hintText: "Name",
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(16)),
-                    ),
-                    filled: true,
-                    fillColor: Colors.grey[200],
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 36.0,
-                  right: 36.0,
-                  top: 10,
+                  top: 15,
                 ),
                 child: TextField(
                   decoration: InputDecoration(
@@ -153,7 +143,7 @@ class Signup extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   left: 36.0,
                   right: 36.0,
-                  top: 10,
+                  top: 15,
                 ),
                 child: TextField(
                   decoration: InputDecoration(
@@ -170,28 +160,28 @@ class Signup extends StatelessWidget {
 
               ElevatedButton(
                 onPressed: () {
-                  Get.to(ExploreView());
+                  Get.to(BottomNavPage());
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.deepPurpleAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(16),
                   ),
-                  padding: EdgeInsets.symmetric(horizontal: 80, vertical: 20),
+                  padding: EdgeInsets.symmetric(horizontal: 90, vertical: 20),
                 ),
-                child: Image.asset("asset/images/7.png"),
+                child: Image.asset("asset/images/login.png"),
               ),
               SizedBox(height: MediaQuery.of(context).size.height * 2.5 / 100),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text("Already have an account?"),
+                  Text("Dont have an account?", textAlign: TextAlign.start),
                   TextButton(
                     onPressed: () {
-                      Get.to(LoginView());
+                      Get.to(Signup());
                     },
                     child: Text(
-                      "login",
+                      "Sign Up",
                       style: TextStyle(color: Colors.pinkAccent),
                     ),
                   ),
