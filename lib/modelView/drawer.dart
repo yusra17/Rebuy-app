@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:newget/modelView/myOrder_view.dart';
+import 'package:newget/modelView/myaccount_view.dart';
 
 class slideBar extends StatelessWidget {
   slideBar({super.key});
@@ -25,25 +27,61 @@ class slideBar extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: MediaQuery.of(context).size.height * 10 / 100),
-                Image.asset("asset/images/Myaccount.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 3 / 100),
-                Image.asset("asset/images/Myorders.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 3 / 100),
-                Image.asset("asset/images/Mylisting.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 3 / 100),
-                Image.asset("asset/images/Mylisting.png"),
-                SizedBox(height: MediaQuery.of(context).size.height * 3 / 100),
+                SizedBox(height: MediaQuery.of(context).size.height * 6 / 100),
+                SizedBox(
+                  height: 100,
+                  width: 300,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(MyaccountView());
+                    },
+                    child: Image.asset("asset/images/Myaccount.png"),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 2 / 100),
+                SizedBox(
+                  height: 100,
+                  width: 300,
+                  child: GestureDetector(
+                    onTap: () {
+                      Get.to(MyorderView());
+                    },
+                    child: Image.asset("asset/images/Myorders.png"),
+                  ),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 2 / 100),
+                SizedBox(
+                  height: 100,
+                  width: 300,
+                  child: Image.asset("asset/images/Mylisting.png"),
+                ),
+                SizedBox(height: MediaQuery.of(context).size.height * 2 / 100),
+                SizedBox(
+                  height: 100,
+                  width: 300,
+                  child: Image.asset("asset/images/Likeditems.png"),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * 1.5 / 100,
+                ),
                 SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Image.asset("asset/images/FeedbackBtn.png"),
                       SizedBox(
-                        width: MediaQuery.of(context).size.width * 1.5 / 100,
+                        height: 85,
+                        width: 150,
+                        child: Image.asset("asset/images/FeedbackBtn.png"),
                       ),
-                      Image.asset("asset/images/signout.png"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width * 1 / 100,
+                      ),
+                      SizedBox(
+                        height: 85,
+                        width: 150,
+                        child: Image.asset("asset/images/signout.png"),
+                      ),
                     ],
                   ),
                 ),
